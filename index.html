@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Loïc Etoundi | Fullstack Developer & Spotify Expert</title>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./src/styles/index.css" />
+		<style>
+			.contact-form {
+				max-width: 600px;
+				margin: 0 auto;
+				padding: 20px;
+			}
+			.form-group {
+				margin-bottom: 20px;
+			}
+			label {
+				display: block;
+				margin-bottom: 5px;
+				font-weight: bold;
+			}
+			.form-control {
+				width: 100%;
+				padding: 10px;
+				border: 1px solid #ccc;
+				border-radius: 4px;
+				box-sizing: border-box;
+			}
+			textarea.form-control {
+				height: 150px;
+				resize: vertical;
+			}
+			.btn {
+				background-color: #4caf50;
+				color: white;
+				padding: 12px 20px;
+				border: none;
+				border-radius: 4px;
+				cursor: pointer;
+				font-size: 16px;
+			}
+			.btn:hover {
+				background-color: #45a049;
+			}
+			.error-message {
+				color: red;
+				font-size: 14px;
+				margin-top: 5px;
+				display: none;
+			}
+			#confirmationMessage {
+				display: none;
+				background-color: #dff0d8;
+				color: #3c763d;
+				padding: 15px;
+				margin-top: 20px;
+				border-radius: 4px;
+			}
+		</style>
+	</head>
+	<body>
+		<header>
+			<div class="container header-container">
+				<a href="#" class="logo">LOÏC<span>.</span></a>
+				<nav>
+					<ul>
+						<li><a href="#home" data-i18n="home">Home</a></li>
+						<li><a href="#about" data-i18n="about">About</a></li>
+						<li><a href="#skills" data-i18n="skills">Skills</a></li>
+						<li><a href="#portfolio" data-i18n="portfolio">Portfolio</a></li>
+						<li><a href="#experience" data-i18n="experience">Experience</a></li>
+						<li><a href="#contact" data-i18n="contact">Contact</a></li>
+						<li class="language-selector">
+							<button class="lang-btn active" data-lang="en">EN</button>
+							<button class="lang-btn" data-lang="fr">FR</button>
+						</li>
+					</ul>
+				</nav>
+				<button class="mobile-menu-btn" aria-label="Ouvrir le menu mobile">
+					<i class="fas fa-bars"></i>
+				</button>
+			</div>
+
+			<div class="mobile-menu">
+				<button class="close-btn" aria-label="Fermer le menu mobile">
+					<i class="fas fa-times"></i>
+				</button>
+				<ul>
+					<li><a href="#home" data-i18n="home">Home</a></li>
+					<li><a href="#about" data-i18n="about">About</a></li>
+					<li><a href="#skills" data-i18n="skills">Skills</a></li>
+					<li><a href="#portfolio" data-i18n="portfolio">Portfolio</a></li>
+					<li><a href="#experience" data-i18n="experience">Experience</a></li>
+					<li><a href="#contact" data-i18n="contact">Contact</a></li>
+					<li><a href="#" class="btn" data-i18n="cv">View my CV</a></li>
+					<li class="language-selector">
+						<button class="lang-btn active" data-lang="en">EN</button>
+						<button class="lang-btn" data-lang="fr">FR</button>
+					</li>
+				</ul>
+			</div>
+			<div class="overlay"></div>
+		</header>
+
+		<section id="home" class="hero">
+			<div class="container hero-content">
+				<div>
+					<h1 data-i18n="heroTitle">
+						Loïc Etoundi<br /><span>Fullstack Developer</span><br />& Spotify
+						Expert
+					</h1>
+					<p class="text-justify" data-i18n="heroDesc">
+						I create exceptional digital experiences and memorable sound designs
+						for leading brands.
+					</p>
+					<div class="hero-buttons">
+						<a href="#portfolio" class="btn" data-i18n="viewProjects"
+							>View my projects</a
+						>
+						<a
+							href="./src/pages/cv.html"
+							class="btn btn-outline"
+							data-i18n="viewCV"
+							>View my CV</a
+						>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="about">
+			<div class="container">
+				<h2 class="section-title" data-i18n="aboutTitle">About Me</h2>
+				<div class="about-content">
+					<div class="about-text">
+						<h3 data-i18n="aboutSubtitle">
+							Passionate about technological innovation and user experience
+						</h3>
+						<p class="text-justify" data-i18n="aboutText1">
+							Hello, I'm Loïc Etoundi, a fullstack developer and Spotify
+							designer with over 8 years of experience in creating innovative
+							digital solutions.
+						</p>
+						<p class="text-justify" data-i18n="aboutText2">
+							Specialist in modern technologies (React, Node.js, Python) and
+							expert in designing immersive audio experiences on Spotify, I
+							combine technical development and creative design to deliver
+							exceptional products.
+						</p>
+						<p class="text-justify" data-i18n="aboutText3">
+							My rigorous and user-centered approach allows me to deliver
+							projects that combine technical performance and impactful design,
+							meeting the requirements of the most demanding clients.
+						</p>
+						<a href="#contact" class="btn" data-i18n="contactMe">Contact me</a>
+					</div>
+					<div class="about-image">
+						<div
+							class="profile-img-placeholder"
+							style="
+								background: url(./src/assets/me.png) no-repeat center/contain;
+								height: 500px;
+								border-radius: 10px;
+							"
+						></div>
+						<div class="spotify-badge">
+							<i class="fab fa-spotify"></i>
+							<span data-i18n="spotifyBadge">Certified Spotify Designer</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="skills">
+			<div class="container">
+				<h2 class="section-title" data-i18n="skillsTitle">My Skills</h2>
+				<div class="skills-container">
+					<div class="skill-card">
+						<i class="fas fa-code"></i>
+						<h3 data-i18n="skill1Title">Fullstack Development</h3>
+						<ul>
+							<li data-i18n="skill1Item1">JavaScript (ES6+) / TypeScript</li>
+							<li data-i18n="skill1Item2">React.js / Next.js / Vue.js</li>
+							<li data-i18n="skill1Item3">Node.js / Express / NestJS</li>
+							<li data-i18n="skill1Item4">Python / Django / Flask</li>
+							<li data-i18n="skill1Item5">Databases (SQL/NoSQL)</li>
+							<li data-i18n="skill1Item6">REST & GraphQL Architecture</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<i class="fab fa-spotify"></i>
+						<h3 data-i18n="skill2Title">Spotify Design</h3>
+						<ul>
+							<li data-i18n="skill2Item1">Canvas Design</li>
+							<li data-i18n="skill2Item2">Animated Playlist Creation</li>
+							<li data-i18n="skill2Item3">Audio Branding Strategy</li>
+							<li data-i18n="skill2Item4">Interactive Experiences</li>
+							<li data-i18n="skill2Item5">Discovery Optimization</li>
+							<li data-i18n="skill2Item6">Listening Data Analysis</li>
+						</ul>
+					</div>
+
+					<div class="skill-card">
+						<i class="fas fa-paint-brush"></i>
+						<h3 data-i18n="skill3Title">Design & UX/UI</h3>
+						<ul>
+							<li data-i18n="skill3Item1">Interface Design (UI)</li>
+							<li data-i18n="skill3Item2">User Experience (UX)</li>
+							<li data-i18n="skill3Item3">Prototyping (Figma, Adobe XD)</li>
+							<li data-i18n="skill3Item4">Responsive Design</li>
+							<li data-i18n="skill3Item5">Design System</li>
+							<li data-i18n="skill3Item6">User Testing</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="portfolio">
+			<div class="container">
+				<h2 class="section-title" data-i18n="portfolioTitle">My Portfolio</h2>
+				<div class="portfolio-grid">
+					<div class="portfolio-item">
+						<div
+							class="portfolio-img-placeholder"
+							style="
+								background: url(./src/assets/audio.jpeg) no-repeat
+									center/contain;
+								height: 100%;
+							"
+						></div>
+						<div class="portfolio-overlay">
+							<span class="portfolio-tag">Spotify</span>
+							<h3 data-i18n="project1Title">Interactive Audio Experience</h3>
+							<p class="text-justify" data-i18n="project1Desc">
+								Launch campaign for an emerging artist
+							</p>
+						</div>
+					</div>
+
+					<div class="portfolio-item">
+						<div
+							class="portfolio-img-placeholder"
+							style="
+								background: url(./src/assets/ecom.jpeg) no-repeat center/contain;
+								height: 100%;
+							"
+						></div>
+						<div class="portfolio-overlay">
+							<span class="portfolio-tag">Web App</span>
+							<h3 data-i18n="project2Title">E-commerce Platform</h3>
+							<p class="text-justify" data-i18n="project2Desc">
+								Complete solution with AI recommendation system
+							</p>
+						</div>
+					</div>
+
+					<div class="portfolio-item">
+						<div
+							class="portfolio-img-placeholder"
+							style="
+								background: url(./src/assets/song.jpeg) no-repeat center/contain;
+								height: 100%;
+							"
+						></div>
+						<div class="portfolio-overlay">
+							<span class="portfolio-tag">Spotify</span>
+							<h3 data-i18n="project3Title">Corporate Sound Branding</h3>
+							<p class="text-justify" data-i18n="project3Desc">
+								Complete audio identity for a luxury brand
+							</p>
+						</div>
+					</div>
+
+					<div class="portfolio-item">
+						<div
+							class="portfolio-img-placeholder"
+							style="
+								background: url(./src/assets/music.jpeg) no-repeat
+									center/contain;
+								height: 100%;
+							"
+						></div>
+						<div class="portfolio-overlay">
+							<span class="portfolio-tag">Mobile App</span>
+							<h3 data-i18n="project4Title">Music Streaming Service</h3>
+							<p class="text-justify" data-i18n="project4Desc">
+								Cross-platform mobile app with social features
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="experience">
+			<div class="container">
+				<h2 class="section-title" data-i18n="experienceTitle">My Experience</h2>
+				<div class="timeline">
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<span class="timeline-date">2021 - Present</span>
+							<h3 data-i18n="job1Title">Lead Developer & Spotify Designer</h3>
+							<h4 data-i18n="job1Company">Harmonie Numérique</h4>
+							<p class="text-justify" data-i18n="job1Desc">
+								Technical direction of complex web projects and creation of
+								innovative audio experiences for clients in the music and luxury
+								industries.
+							</p>
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<span class="timeline-date">2018 - 2021</span>
+							<h3 data-i18n="job2Title">Senior Fullstack Developer</h3>
+							<h4 data-i18n="job2Company">Sonora Tech</h4>
+							<p class="text-justify" data-i18n="job2Desc">
+								Design and development of web and mobile applications with
+								integration of advanced audio features.
+							</p>
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<span class="timeline-date">2015 - 2018</span>
+							<h3 data-i18n="job3Title">Frontend Developer</h3>
+							<h4 data-i18n="job3Company">Digital Waves</h4>
+							<p class="text-justify" data-i18n="job3Desc">
+								Creation of innovative user interfaces for music and streaming
+								platforms.
+							</p>
+						</div>
+					</div>
+
+					<div class="timeline-item">
+						<div class="timeline-content">
+							<span class="timeline-date">2013 - 2015</span>
+							<h3 data-i18n="job4Title">Web & Sound Designer</h3>
+							<h4 data-i18n="job4Company">Studio Mélodie</h4>
+							<p class="text-justify" data-i18n="job4Desc">
+								Design of sound identities and user interfaces for music
+								applications.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact">
+			<div class="container">
+				<h2 class="section-title" data-i18n="contactTitle">Contact Me</h2>
+				<div class="contact-container">
+					<div class="contact-info">
+						<h3 data-i18n="contactSubtitle">Let's talk about your project</h3>
+						<p class="text-justify" data-i18n="contactDesc">
+							Whether you have a web development project, an idea for a unique
+							Spotify experience, or just a question, feel free to contact me.
+						</p>
+						<div class="contact-details">
+							<div>
+								<i class="fas fa-envelope"></i>
+								<span>loic.etoundi@example.com</span>
+							</div>
+							<div>
+								<i class="fas fa-phone"></i>
+								<span>+237 6 57 50 05 60</span>
+							</div>
+							<div>
+								<i class="fas fa-map-marker-alt"></i>
+								<span data-i18n="location">Yaounde, Cameroon</span>
+							</div>
+						</div>
+						<div class="social-links">
+							<a
+								href="https://linkedin.com/in/loicetoundi"
+								target="_blank"
+								aria-label="LinkedIn"
+								><i class="fab fa-linkedin-in"></i
+							></a>
+							<a
+								href="http://github.com/DevLoicPro/"
+								target="_blank"
+								aria-label="GitHub"
+								><i class="fab fa-github"></i
+							></a>
+							<a
+								href="https://twitter.com/loicetoundi"
+								target="_blank"
+								aria-label="Twitter"
+								><i class="fab fa-twitter"></i
+							></a>
+							<a
+								href="https://spotify.com/user/loicetoundi"
+								target="_blank"
+								aria-label="Spotify"
+								><i class="fab fa-spotify"></i
+							></a>
+						</div>
+					</div>
+					<div class="contact-form">
+						<form id="contactForm">
+							<div class="form-group">
+								<label for="name" data-i18n="formName">Name</label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									class="form-control"
+									required
+								/>
+								<span id="nameError" class="error-message"
+									>Veuillez entrer votre nom</span
+								>
+							</div>
+							<div class="form-group">
+								<label for="email" data-i18n="formEmail">Email</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									class="form-control"
+									required
+								/>
+								<span id="emailError" class="error-message"
+									>Veuillez entrer un email valide</span
+								>
+							</div>
+							<div class="form-group">
+								<label for="subject" data-i18n="formSubject">Subject</label>
+								<input
+									type="text"
+									id="subject"
+									name="subject"
+									class="form-control"
+									required
+								/>
+								<span id="subjectError" class="error-message"
+									>Veuillez entrer un sujet</span
+								>
+							</div>
+							<div class="form-group">
+								<label for="message" data-i18n="formMessage">Message</label>
+								<textarea
+									id="message"
+									name="message"
+									class="form-control"
+									required
+								></textarea>
+								<span id="messageError" class="error-message"
+									>Veuillez entrer votre message</span
+								>
+							</div>
+							<button
+								type="submit"
+								class="btn"
+								id="submitBtn"
+								data-i18n="formSubmit"
+							>
+								<i class="fas fa-paper-plane"></i> Envoyer le message
+							</button>
+						</form>
+						<div id="confirmationMessage">Message envoyé avec succès !</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<footer>
+			<div class="container footer-content">
+				<a href="#" class="footer-logo">LOÏC<span>.</span></a>
+				<p class="copyright">
+					&copy; 2025 Loïc Etoundi.
+					<span data-i18n="rights">All rights reserved.</span>
+				</p>
+			</div>
+		</footer>
+		<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+		<script src="./src/scripts/index.js"></script>
+	</body>
+</html>
